@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      const myDiv = document.getElementById("myDiv");
+      myDiv.style.display = "none"; // Hide the div
+      //The bug is solved by using a timeout or forcing a reflow 
+      setTimeout(function(){
+        myDiv.style.display = "block"; // Show the div
+      }, 10);
+      
+    }
+  </script>
+</body>
+</html>
